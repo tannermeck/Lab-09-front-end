@@ -1,0 +1,16 @@
+a.active {
+    color: blue;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.header {
+    background-color: aquamarine;
+    height: 80px;
+}

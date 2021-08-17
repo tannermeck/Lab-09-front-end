@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import  DirtbikeList from './DirtbikeList.js';
+import  DirtbikeItem from './DirtbikeItem.js';
+import CreateDirtbike from './CreateDirtbike.js';
+import Header from './Header.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {  }
+  render() { 
+    return ( 
+      <>
+        <BrowserRouter>
+          <Header/>
+          <Switch>
+            <Route exact path="/" component={DirtbikeList}/>
+            <Route path="/dirtbikes/:id" component={DirtbikeItem}/>
+            <Route path="/create" component={CreateDirtbike}/>
+          </Switch>
+        </BrowserRouter>
+      </>
+     );
+  }
 }
-
+ 
 export default App;
