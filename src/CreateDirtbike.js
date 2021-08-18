@@ -38,15 +38,15 @@ class CreateDirtbike extends Component {
             <>
                 {!this.state.error && (
                 <div>
-                    <h1>{this.state.message}</h1>
+                    <h1 className="heading">{this.state.message}</h1>
                 </div>
                 )}
                     {this.state.error && (
                 <div>
-                    <h1>{this.state.message}</h1>
+                    <h1 className="heading">{this.state.message}</h1>
                 </div>
                 )}
-                <h1>{this.state.brand.toUpperCase()}</h1>
+                <h1 className="heading">{this.state.brand.toUpperCase()}</h1>
             <section className="item-section">
                 <form onSubmit={this.handleChange} id="update-dirtbike">
                     <div className="input-field">

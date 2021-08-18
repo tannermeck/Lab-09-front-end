@@ -5,7 +5,7 @@
     border-radius: 5px;
     margin: 20px;
 }
-h1, h2 {
+.bike-logo h1, .bike-logo h2 {
     display: flex;
     justify-content: center;
 }
