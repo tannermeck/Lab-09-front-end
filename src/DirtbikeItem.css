@@ -1,0 +1,46 @@
+.item-section {
+    background-color: cadetblue;
+    height: 100vh;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#update-dirtbike {
+    border: 2px solid black;
+    margin: auto;
+    padding: 15px;
+}
+label {
+    margin-right: 10px;
+    font-size:larger;
+    margin-bottom: 20px;
+}
+div {
+    margin: auto;
+}
+.true-false {
+    margin-bottom: 10px;
+}
+.true, .false {
+    margin-left: 20px;
+}
+.true {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+}
+.false {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.input-field {
+    margin-bottom: 10px;
+}
+.tire-field {
+    margin-bottom: 10px;
+}
+#submit-button {
+    
+}

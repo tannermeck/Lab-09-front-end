@@ -1,8 +1,9 @@
 a.active {
-    color: blue;
+    color:deepskyblue;
     text-decoration: none;
 }
 a {
+    color: white;
     text-decoration: none;
     display: flex;
     justify-content: flex-end;
@@ -11,6 +12,6 @@ a {
     margin-bottom: 5px;
 }
 .header {
-    background-color: aquamarine;
+    background-color:darkslategray;
     height: 80px;
 }

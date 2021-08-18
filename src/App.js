@@ -12,11 +12,11 @@ class App extends Component {
       <>
         <BrowserRouter>
           <Header/>
-          <Switch>
-            <Route exact path="/" component={DirtbikeList}/>
-            <Route path="/dirtbikes/:id" component={DirtbikeItem}/>
-            <Route path="/create" component={CreateDirtbike}/>
-          </Switch>
+            <Switch>
+              <Route exact path="/" component={DirtbikeList}/>
+              <Route path="/dirtbikes/:id" component={DirtbikeItem}/>
+              <Route path="/create" component={CreateDirtbike}/>
+            </Switch>
         </BrowserRouter>
       </>
      );

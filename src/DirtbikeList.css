@@ -20,4 +20,11 @@ h1, h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: cadetblue;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: deepskyblue;
 }
