@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './DirtbikeItem.css';
-import { getDirtbike, getTires } from './utils.js';
+import { getDirtbike, getTires, updateDirtbike } from './utils.js';
 
 
 class DirtbikeItem extends Component {
@@ -8,14 +8,30 @@ class DirtbikeItem extends Component {
     componentDidMount = async () => {
         const id = this.props.match.params.id
         const data = await getDirtbike(id);
-        // console.log(data)
         const tires = await getTires();
-        
         this.setState({ ...data, tires})
+        console.log(data)
+    }
+    getTireId = () => {
+        const tire = this.state.tires.find((tire)=> tire.brand === this.state.tirebrand)
+        console.log((tire.id))
+        return tire.id;
+    }
+    handleChange = async(e) => {
+        e.preventDefault();
+        const dirtbikeData = {
+            id: this.state.id,
+            brand: this.state.brand,
+            dirtbike: this.state.dirtbike,
+            tire_id: this.getTireId(),
+        }
+        const data = await updateDirtbike(dirtbikeData)
     }
     render() { 
-        console.log(typeof(this.state.dirtbike))
         return ( 
+            <>
+            <h1>{this.state.brand.toUpperCase()}</h1>
+            <h1>{this.state.tirebrand}</h1>
             <section className="item-section">
                 <form id="update-dirtbike">
                     <div className="input-field">
@@ -27,24 +43,29 @@ class DirtbikeItem extends Component {
                     </div>
                     <div className="true-false">
                         <label>Dirtbike</label>
-                        <select defaultValue={this.state.dirtbike ? 'true' : 'false'}>
+                        <select value={this.state.dirtbike}
+                        onChange={(e)=>{this.setState({dirtbike: e.target.value})}}
+                        >
                             <option value="true">True</option>
                             <option value="false">False</option>
                         </select>   
                     </div>
                     <div className="tire-field">
                         <label>Tires:</label>
-                        <select defaultValue={this.state.tirebrand}>
+                        <select value={this.state.tirebrand}
+                        onChange={(e)=>{this.setState({tirebrand: e.target.value})}}
+                        >
                             {this.state.tires.map((tire)=> {
-                                return <option selected={tire.brand === this.state.tirebrand} key={tire.brand} value={tire.brand}>{tire.brand}</option>
+                                return <option key={tire.brand} value={tire.brand}>{tire.brand}</option>
                             })}
                         </select>
                     </div>
                     <div id="submit-button">
-                        <button>Submit</button>
+                        <button onClick={this.handleChange}>Submit</button>
                     </div>
                 </form>
             </section>
+            </>
          );
     }
 }
