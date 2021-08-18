@@ -4,8 +4,9 @@
     background-color: tan;
     border-radius: 5px;
     margin: 20px;
+    box-shadow: 20px 10px 20px 2px white;
 }
-h1, h2 {
+.bike-logo h1, .bike-logo h2 {
     display: flex;
     justify-content: center;
 }
