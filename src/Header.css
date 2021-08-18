@@ -1,0 +1,17 @@
+a.active {
+    color:deepskyblue;
+    text-decoration: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.header {
+    background-color:darkslategray;
+    height: 80px;
+}
