@@ -24,3 +24,12 @@ export const updateDirtbike = async (dirtbikeData) => {
     const data = await response.json();
     return data;
 }
+export const createDirtbike = async (dirtbikeData) => {
+    const response = await fetch(`${url}/dirtbikes/`, {
+        method: 'Post',
+        headers: { 'Content-type': 'application/json'},
+        body: JSON.stringify(dirtbikeData),
+    });
+    const data = await response.json();
+    return data;
+}
